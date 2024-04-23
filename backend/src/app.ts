@@ -13,6 +13,8 @@ const { PORT = 3000 } = process.env;
 const app = express();
 mongoose.connect(DB_ADDRESS);
 
+mongoose.set('strictQuery', true);
+
 // Только для локальных тестов. Не используйте это в продакшене
 // app.use(cors())
 app.use(express.json());
