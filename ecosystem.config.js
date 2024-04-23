@@ -1,7 +1,7 @@
 module.exports = {
     apps : [{
       name: 'my-app',                 
-      script: './src/app.js',           
+      script: './dist/app.js',           
       instances: 2,                     
       autorestart: true,               
       watch: true,                     
