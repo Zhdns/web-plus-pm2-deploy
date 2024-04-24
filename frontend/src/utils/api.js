@@ -139,7 +139,7 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://158.160.137.142:3000');
+  const api = new Api('/api/');
   
   export default api;
   
