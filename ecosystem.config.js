@@ -2,7 +2,7 @@ module.exports = {
     apps : [{
       name: 'my-app',                 
       script: './backend/dist/app.js',           
-      instances: 2,                     
+      instances: 1,                     
       autorestart: true,               
       watch: true,                     
       max_memory_restart: '1G',         
@@ -10,8 +10,4 @@ module.exports = {
         NODE_ENV: 'development',        
         PORT: 3000                      
       },
-      env_production: {
-        NODE_ENV: 'production',         
-        PORT: 8080
-      }
     }]}
