@@ -139,7 +139,7 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('/api/');
+  const api = new Api('api.ois.nomoredomainswork.ru');
   
   export default api;
   
