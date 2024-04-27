@@ -82,6 +82,7 @@ userSchema.methods.toJSON = function toJSON() {
   if ('password' in obj) {
     delete obj.password;
   }
+
   return obj;
 };
 
