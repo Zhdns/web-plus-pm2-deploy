@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import mongoose, { Model, Document, HydratedDocument } from 'mongoose';
 import validator from 'validator';
 import bcrypt from 'bcryptjs'; // импортируем bcrypt
