@@ -79,7 +79,9 @@ userSchema.statics
 
 userSchema.methods.toJSON = function toJSON() {
   const obj = this.toObject();
-  delete obj.password;
+  if ('password' in obj) {
+    delete obj.password;
+  }
   return obj;
 };
 
