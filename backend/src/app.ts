@@ -11,7 +11,9 @@ import routes from './routes';
 
 const { PORT = 3000 } = process.env;
 const app = express();
-mongoose.connect(DB_ADDRESS);
+mongoose.connect(DB_ADDRESS).catch((error) => {
+  console.error('MongoDB connection error:', error);
+});
 console.log(DB_ADDRESS);
 
 mongoose.set('strictQuery', true);
