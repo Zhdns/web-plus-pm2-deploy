@@ -140,6 +140,8 @@ class Api {
   }
   // Замените на адрес вашего бэкенда
   const api = new Api('api.ois.nomoredomainswork.ru');
+  // const api = new Api('http://localhost:3000');
+
   
   export default api;
   
