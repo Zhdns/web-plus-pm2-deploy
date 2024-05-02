@@ -11,6 +11,11 @@ module.exports = {
   apps: [{
     name: 'mesto-backend',
     script: './dist/app.js',
+    watch: true,
+    exec_mode: 'cluster',
+    instances: 2,
+    max_restarts: 10,
+    restart_delay: 1000,
   }],
   deploy: {
     production: {
