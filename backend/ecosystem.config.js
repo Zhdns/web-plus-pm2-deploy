@@ -4,7 +4,7 @@ dotenv.config({ path: './.env' });
 console.log(dotenv.config({ path: './.env' }));
 
 const {
-  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPOSITOTY,
+  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH_BACKEND, DEPLOY_REF, DEPLOY_REPOSITOTY,
 } = process.env;
 
 module.exports = {
@@ -18,9 +18,9 @@ module.exports = {
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
       repo: DEPLOY_REPOSITOTY,
-      path: DEPLOY_PATH,
-      'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      'post-deploy': 'cd backend && pwd && npm ci && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
+      path: DEPLOY_PATH_BACKEND,
+      'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH_BACKEND}`,
+      'post-deploy': 'rm -rf frontend && cd backend && pwd && npm ci && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
     },
   },
 };
